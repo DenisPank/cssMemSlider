@@ -1,0 +1,17 @@
+
+
+#sliderInner{
+  display: flex;
+  width: max-content;
+}
+#sliderBody{
+  overflow: hidden;
+  max-width: 500px;
+  margin: 0 auto;
+  border: 1px solid #000;
+}
+.slider{
+}
+.slider *{
+  width: 100%;
+}
