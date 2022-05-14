@@ -3,6 +3,10 @@
 
 let slider = document.querySelectorAll(".slider")
 
+
+
+
+
 const sliderWidth = ()=>{
   for(let i of slider){
     i.style.maxWidth = getComputedStyle(sliderBody).maxWidth;
@@ -18,3 +22,12 @@ const addAttribute = () => {
   }
 }
 addAttribute() // добавление к слайдерам атрибута номера
+
+
+function addDots(n) {
+  for(let i = 0; i < n; i++){
+    sliderDots.insertAdjacentHTML("afterbegin", '<div class="slider-dot"><span></span></div>')
+  }
+  
+}
+addDots(slider.length) // добавление pagination

@@ -1,8 +1,11 @@
-
+*{
+  box-sizing: border-box;
+}
 
 #sliderInner{
   display: flex;
   width: max-content;
+  border: 2px solid #ff0000;
 }
 #sliderBody{
   overflow: hidden;
@@ -10,8 +13,22 @@
   margin: 0 auto;
   border: 1px solid #000;
 }
-.slider{
+/* pagination */
+#sliderDots{
+  padding: 10px 0;
+display: flex;
+justify-content: center;
 }
+.slider-dot span{
+  margin: 0 10px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background: rgb(6, 118, 174);
+
+}
+/* pagination */
 .slider *{
   width: 100%;
 }
