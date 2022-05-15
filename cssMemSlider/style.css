@@ -5,20 +5,29 @@
 #sliderInner{
   display: flex;
   width: max-content;
-  border: 2px solid #ff0000;
   position: relative;
+  transition: left 0.4s ease;
 }
 #sliderBody{
   overflow: hidden;
   max-width: 500px;
   margin: 0 auto;
   border: 1px solid #000;
+  position: relative;
 }
 /* pagination */
 #sliderDots{
   padding: 10px 0;
 display: flex;
 justify-content: center;
+position: absolute;
+bottom: 10px;
+right: 0;
+}
+.slider-dot{
+  cursor: pointer;
+  transition: opacity 0.4s ease;
+
 }
 .slider-dot span{
   margin: 0 10px;
@@ -27,9 +36,26 @@ justify-content: center;
   height: 10px;
   border-radius: 100%;
   background: rgb(6, 118, 174);
-
+  border: 1px solid #000;
+}
+.slider-dot:hover{
+  opacity: 0.5;
+}
+.slider-dot.active span{
+  background: none;
 }
 /* pagination */
 .slider *{
   width: 100%;
+}
+
+@media screen and (max-width: 500px){
+  #sliderDots{
+  position: static;
+  }
+ 
+  .slider__wrapper{
+    max-width: calc(100vw - 30px);
+    
+  }
 }

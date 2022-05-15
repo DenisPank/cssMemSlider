@@ -7,7 +7,7 @@ let slider = document.querySelectorAll(".slider")
 
 const sliderWidth = ()=>{
   for(let i of slider){
-    i.style.maxWidth = getComputedStyle(sliderBody).maxWidth;
+    i.style.width = getComputedStyle(sliderBody).maxWidth;
   }
 }
 sliderWidth()   // ширины блока слайдер
@@ -32,6 +32,8 @@ addDots(slider.length) // добавление pagination
 
 let dots = document.querySelectorAll(".slider-dot")
 
+dots[0].classList.add("active")
+
 const addAttributeDots = () => {
   let n = 0
   for(let i of dots){
@@ -45,11 +47,16 @@ sliderInner.style.left = 0
 
 
 const sliderChange = () =>{
-
   for(let i of dots){
     i.addEventListener("click", function () {
+
       sliderInner.style.left = -i.getAttribute('number-slider') * 500 +"px"
-      console.log(i.getAttribute('number-slider'))
+
+      dots.forEach(element => {
+        element.classList.remove("active")
+      });
+
+      i.classList.add("active")
     })
   }
 }
