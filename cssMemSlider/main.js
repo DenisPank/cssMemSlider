@@ -5,8 +5,6 @@ let slider = document.querySelectorAll(".slider")
 
 
 
-
-
 const sliderWidth = ()=>{
   for(let i of slider){
     i.style.maxWidth = getComputedStyle(sliderBody).maxWidth;
@@ -31,3 +29,28 @@ function addDots(n) {
   
 }
 addDots(slider.length) // добавление pagination
+
+let dots = document.querySelectorAll(".slider-dot")
+
+const addAttributeDots = () => {
+  let n = 0
+  for(let i of dots){
+    i.setAttribute('number-slider', n++)
+  }
+}
+addAttributeDots() // добавление к точкам атрибута номера
+
+
+sliderInner.style.left = 0
+
+
+const sliderChange = () =>{
+
+  for(let i of dots){
+    i.addEventListener("click", function () {
+      sliderInner.style.left = -i.getAttribute('number-slider') * 500 +"px"
+      console.log(i.getAttribute('number-slider'))
+    })
+  }
+}
+sliderChange() //листание слайдера

@@ -6,6 +6,7 @@
   display: flex;
   width: max-content;
   border: 2px solid #ff0000;
+  position: relative;
 }
 #sliderBody{
   overflow: hidden;
