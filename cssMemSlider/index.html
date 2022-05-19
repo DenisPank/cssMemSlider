@@ -9,6 +9,10 @@
 </head>
 <body>
   <div id="sliderBody">
+    <input checked type="radio" id="one" name="sliderBody__radio">
+    <input type="radio" id="two" name="sliderBody__radio">
+    <input type="radio" id="third" name="sliderBody__radio">
+    <input type="radio" id="fourth" name="sliderBody__radio">
     <div id="sliderInner">
       <div class="slider">
         <div class="slider__wrapper">
@@ -39,8 +43,12 @@
         </div>
       </div>
     </div>
-    <div id="sliderDots"></div>
+    <div id="sliderDots">
+      <label for="one" class="slider-dot"><span></span></label>
+      <label for="two" class="slider-dot"><span></span></label>
+      <label for="third" class="slider-dot"><span></span></label>
+      <label for="fourth" class="slider-dot"><span></span></label>
+    </div>
   </div>
-  <script src="main.js"></script>
 </body>
 </html>

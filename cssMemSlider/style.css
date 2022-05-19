@@ -21,6 +21,9 @@ body{
   position: relative;
   transition: left 0.4s ease;
 }
+.slider{
+  max-width: 500px;
+}
 #sliderBody{
   overflow: hidden;
   max-width: 500px;
@@ -65,6 +68,25 @@ right: 0;
   width: 100%;
 }
 
+input[name="sliderBody__radio"]{
+  display: none;
+}
+#one:checked ~ #sliderInner{
+  left: 0;
+}
+#two:checked ~ #sliderInner{
+  left: -500px;
+}
+#third:checked ~ #sliderInner{
+  left: -1000px;
+}
+#fourth:checked ~ #sliderInner{
+  left: -1500px;
+}
+
+
+
+
 @media screen and (max-width: 500px){
   #sliderDots{
   position: static;
@@ -73,5 +95,17 @@ right: 0;
   .slider__wrapper{
     max-width: calc(100vw);
     
+  }
+  #one:checked ~ #sliderInner{
+    left: 0;
+  }
+  #two:checked ~ #sliderInner{
+    left: -100vw;
+  }
+  #third:checked ~ #sliderInner{
+    left: -200vw;
+  }
+  #fourth:checked ~ #sliderInner{
+    left: -300vw;
   }
 }
