@@ -1,0 +1,125 @@
+/* genera */
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  background: url("images/bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* genera */
+
+
+#sliderInner{
+  display: flex;
+  width: max-content;
+  position: relative;
+  transition: left 0.4s ease;
+}
+.slider{
+  max-width: 500px;
+}
+#sliderBody{
+  overflow: hidden;
+  max-width: 500px;
+  margin: 10px auto;
+  position: relative;
+  background: #fff;
+  color: #000;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+/* pagination */
+#sliderDots{
+  padding: 10px 0;
+display: flex;
+justify-content: center;
+position: absolute;
+bottom: 10px;
+right: 0;
+}
+.slider-dot{
+  cursor: pointer;
+  transition: opacity 0.4s ease;
+  
+}
+.slider-dot span{
+  margin: 0 10px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background: rgb(6, 118, 174);
+  border: 1px solid rgb(52, 15, 165);
+}
+.slider-dot:hover{
+  opacity: 0.5;
+}
+.slider-dot.active span{
+  background: none;
+}
+/* pagination */
+.slider *{
+  width: 100%;
+}
+
+input[name="sliderBody__radio"]{
+  display: none;
+}
+#one:checked ~ #sliderInner{
+  left: 0;
+}
+#two:checked ~ #sliderInner{
+  left: -500px;
+}
+#third:checked ~ #sliderInner{
+  left: -1000px;
+}
+#fourth:checked ~ #sliderInner{
+  left: -1500px;
+}
+
+ #one:checked ~ #sliderDots label[for="one"] span{
+  background: none;
+}
+ #two:checked ~ #sliderDots label[for="two"] span{
+  background: none;
+}
+ #third:checked ~ #sliderDots label[for="third"] span{
+  background: none;
+}
+ #fourth:checked ~ #sliderDots label[for="fourth"] span{
+  background: none;
+}
+
+
+
+
+
+@media screen and (max-width: 500px){
+  #sliderDots{
+  position: static;
+  }
+ 
+  .slider__wrapper{
+    max-width: calc(100vw);
+    
+  }
+  #one:checked ~ #sliderInner{
+    left: 0;
+  }
+  #two:checked ~ #sliderInner{
+    left: -100vw;
+  }
+  #third:checked ~ #sliderInner{
+    left: -200vw;
+  }
+  #fourth:checked ~ #sliderInner{
+    left: -300vw;
+  }
+}
