@@ -84,6 +84,20 @@ input[name="sliderBody__radio"]{
   left: -1500px;
 }
 
+ #one:checked ~ #sliderDots label[for="one"] span{
+  background: none;
+}
+ #two:checked ~ #sliderDots label[for="two"] span{
+  background: none;
+}
+ #third:checked ~ #sliderDots label[for="third"] span{
+  background: none;
+}
+ #fourth:checked ~ #sliderDots label[for="fourth"] span{
+  background: none;
+}
+
+
 
 
 
